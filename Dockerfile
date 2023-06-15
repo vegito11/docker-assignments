@@ -17,6 +17,8 @@ ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
 EXPOSE 20/tcp 21/tcp 40000-40009/tcp
 HEALTHCHECK CMD netstat -lnt | grep :21 || exit 1
 
+EXPOSE 20-21
+EXPOSE 40000-40009
 
 # docker build --build-arg -t ftp-server .
 # docker run -p 30021:21 -p 40000-40009:40009-40009 --env FTP_USER=john --env FTP_PASS=123  --name ct ftp-server
