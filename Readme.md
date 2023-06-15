@@ -29,10 +29,11 @@
 
 ## K8s Run 
 
-2. Push the Image
+2. Push the Image to Dockerhub
    
    ```bash
    REPO_IMAGE_NAME=vegito/ftp-server
+   docker login --username vegito
    docker tag ftp-server ${REPO_IMAGE_NAME}:latest
    docker push ${REPO_IMAGE_NAME}:latest
    ```
