@@ -4,6 +4,8 @@
   docker build -t ftp-server .
   ```
 
+-----------------------------
+
 ## Run Image and test it
   
   1. Run container in backgroup mode
@@ -27,9 +29,11 @@
      
      ![Login](./img/ftp-login.png)
 
+------------------------------------------
+
 ## K8s Run 
 
-2. Push the Image to Dockerhub
+1. Push the Image to Dockerhub
    
    ```bash
    REPO_IMAGE_NAME=vegito/ftp-server
@@ -38,9 +42,13 @@
    docker push ${REPO_IMAGE_NAME}:latest
    ```
 
-1. Replace the Image name in deployment and Install the resources.
+2. Replace the Image name in deployment and Install the resources.
 
     ```bash
     kubectl apply -f manifest/deployment.yaml
     kubectl apply -f manifest/service.yaml
     ```
+
+3. Login to the fpt using nodeport
+   
+   ![Alt text](/img/ftp-login.png)
