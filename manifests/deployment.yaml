@@ -39,3 +39,4 @@ spec:
       - name: ftp-volume
         hostPath:
           path: /var/data
+          type: DirectoryOrCreate
