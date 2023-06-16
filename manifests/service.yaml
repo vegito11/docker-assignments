@@ -13,12 +13,12 @@ spec:
       nodePort: 30021
     - name: passive-min-port
       protocol: TCP
-      port: 30010
+      port: 30080
       targetPort: minport
-      nodePort: 30010
+      nodePort: 30080
     - name: passive-max-port
       protocol: TCP
-      port: 30011
+      port: 30081
       targetPort: maxport
-      nodePort: 30011
+      nodePort: 30081
   type: NodePort
