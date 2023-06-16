@@ -11,7 +11,8 @@
   1. Run container in backgroup mode
   
      ```bash
-     docker run -d -p 30020-30021:20-21 -p 40000-40009:40000-40009 --env FTP_USER=john --env FTP_PASS=123 --volume $(pwd):/home/john   --name ct ftp-server
+     docker run -d --name ct --volume $(pwd):/home/john -p 30020-30021:20-21 -p 40000-40009:40000-40009 \
+     --env FTP_USER=john --env FTP_PASS=123  --env EXTERNAL_IP=127.0.0.1 ftp-server
      ```
   
   2. Install FTP on host or any machine

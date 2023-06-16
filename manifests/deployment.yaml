@@ -22,3 +22,5 @@ spec:
               value: admin
             - name: FTP_PASS
               value: admin
+            - name: EXTERNAL_IP
+              value: 127.0.0.1

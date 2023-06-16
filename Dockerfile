@@ -2,6 +2,7 @@ FROM alpine:3.18.0
 ENV FTP_USER=foo \
 	FTP_PASS=bar \
 	GID=1000 \
+	EXTERNAL_IP="127.0.0.1" \
 	UID=1000
 
 RUN apk add --no-cache --update \
