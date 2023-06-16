@@ -67,8 +67,11 @@
     ```bash
     kubectl apply -f manifest/deployment.yaml
     kubectl apply -f manifest/service.yaml
-
-    kubectl exec -it deploy/ftp-deployment sh
+    
+    # Debug the app if needed
+    kubectl get pods
+    kubectl get svc
+    kubectl exec -it deploy/ftp-server sh
     ```
 
 3. Login to the fpt using nodeport
@@ -78,6 +81,33 @@
 4. Testing from another container 
    
    ```bash
-   kubectl run test --rm -it --image ubuntu 
-   apt update && apt install ftp -y
+   $ kubectl run test --rm -it --image ubuntu 
+     
+     root@test# apt update && apt install ftp -y
+
+     root@test# echo "this is new file " >> test.txt
+     
+     root@test# echo -e "This is file1 txt \n this is another line " > file1.txt
+     
+     root@test# ftp ftp-service 21
+        
+        username: admin
+        password: admin
+     
+        
+        ftp> passive 
+
+        ftp> ls
+
+        ftp> put test.txt
+
+        ftp> ls
+        
+        ftp> put file1.txt
+
+        ftp> ls
    ```
+   
+   ![K8s FTP](./img/k8s-demo.png)
+
+   ![Put ls](./img/k8s-put-list.png)
