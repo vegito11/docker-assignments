@@ -13,6 +13,10 @@
      ```bash
      docker run -d --name ct --volume $(pwd):/home/john -p 30020-30021:20-21 -p 40000-40009:40000-40009 \
      --env FTP_USER=john --env FTP_PASS=123  --env EXTERNAL_IP=127.0.0.1 ftp-server
+
+     docker run --rm -it ftp-server sh
+     
+     docker exec -it ct sh
      ```
   
   2. Install FTP on host or any machine
@@ -63,6 +67,8 @@
     ```bash
     kubectl apply -f manifest/deployment.yaml
     kubectl apply -f manifest/service.yaml
+
+    kubectl exec -it deploy/ftp-deployment sh
     ```
 
 3. Login to the fpt using nodeport

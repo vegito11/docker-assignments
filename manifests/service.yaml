@@ -6,14 +6,19 @@ spec:
   selector:
     app: ftp
   ports:
-    - protocol: TCP
+    - name: ftp
+      protocol: TCP
       port: 21
       targetPort: 21
       nodePort: 30021
-    - protocol: TCP
+    - name: passive-min-port
+      protocol: TCP
+      port: 30010
       targetPort: minport
       nodePort: 30010
-    - protocol: TCP
+    - name: passive-max-port
+      protocol: TCP
+      port: 30011
       targetPort: maxport
       nodePort: 30011
   type: NodePort
