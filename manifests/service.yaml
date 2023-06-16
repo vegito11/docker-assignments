@@ -10,4 +10,10 @@ spec:
       port: 21
       targetPort: 21
       nodePort: 30021
+    - protocol: TCP
+      targetPort: minport
+      nodePort: 30010
+    - protocol: TCP
+      targetPort: maxport
+      nodePort: 30011
   type: NodePort

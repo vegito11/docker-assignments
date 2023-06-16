@@ -3,6 +3,8 @@ ENV FTP_USER=foo \
 	FTP_PASS=bar \
 	GID=1000 \
 	EXTERNAL_IP="127.0.0.1" \
+	PASSIVE_MIN_PORT=40000 \
+	PASSIVE_MAX_PORT=40009 \
 	UID=1000
 
 RUN apk add --no-cache --update \

@@ -17,6 +17,10 @@ spec:
           image: your-ftp-image:tag
           ports:
             - containerPort: 21
+            - name: minport
+              containerPort: 30080
+            - name: maxport 
+              containerPort: 30081
           env:
             - name: FTP_USER
               value: admin
@@ -24,3 +28,7 @@ spec:
               value: admin
             - name: EXTERNAL_IP
               value: 127.0.0.1
+            - name: PASSIVE_MIN_PORT
+              value: "30080"
+            - name: PASSIVE_MAX_PORT
+              value: "30081"

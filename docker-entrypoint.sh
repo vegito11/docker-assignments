@@ -13,6 +13,8 @@ tail -f /var/log/vsftpd.log | tee /dev/stdout &
 tail -f /var/log/xferlog | tee /dev/stdout &
 
 sed -i "s/^pasv_address=[0-9.]\+/pasv_address=$EXTERNAL_IP/" /etc/vsftpd.conf
+sed -i "s/^pasv_address=[0-9.]\+/pasv_min_port=$PASSIVE_MIN_PORT/" /etc/vsftpd.conf
+sed -i "s/^pasv_address=[0-9.]\+/pasv_max_port=$PASSIVE_MAX_PORT/" /etc/vsftpd.conf
 
 
 exec "$@"

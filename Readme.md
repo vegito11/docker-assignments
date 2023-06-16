@@ -29,6 +29,21 @@
      ```
      
      ![Login](./img/ftp-login.png)
+   
+   4. Enter to Passive mode and trasfer file to ftp server
+      
+      ```bash
+      ftp> passive
+      
+      ftp> ls
+
+      ftp> put test.txt
+
+      ```
+
+      ![Passive Mode](./img/docker_passive.png)
+
+      ![List File](./img/list_file.png)
 
 ------------------------------------------
 
