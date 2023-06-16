@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ftp-server
-          image: your-ftp-image:tag
+          image: vegito/ftp-server
           ports:
             - containerPort: 21
             - name: minport

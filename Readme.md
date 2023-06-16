@@ -73,4 +73,11 @@
 
 3. Login to the fpt using nodeport
    
-   ![Alt text](/img/ftp-login.png)
+   ![nodePort Login](/img/ftp-login.png)
+
+4. Testing from another container 
+   
+   ```bash
+   kubectl run test --rm -it --image ubuntu 
+   apt update && apt install ftp -y
+   ```
